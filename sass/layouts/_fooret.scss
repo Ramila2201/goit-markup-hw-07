@@ -36,14 +36,13 @@
 }
 
 .address {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
   color: var(--secondary-accent-color);
-  text-decoration: none;
+  @include font (14px, 1.71, 400, 0.03em);
   font-style: normal;
+  &:hover, &:focus{
+    color: var(--accent-color);
+    
+  }
 }
 
 .address-item {
@@ -59,15 +58,10 @@
   letter-spacing: 0.03em;
   color: var(--footer-mail-tel-color);
   font-style: normal;
-}
-
-.address:hover,
-.address:focus,
-.footer-link :hover,
-.footer-link :focus {
+  &:hover, &:focus {
   color: var(--accent-color);
+    }
 }
-
 /* Приєднуйтесь .Футер (спільний) */
 
 .invitation-text {

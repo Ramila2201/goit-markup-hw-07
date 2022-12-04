@@ -176,15 +176,23 @@ html {
   background-color: var(--accent-color);
 }
 
-.nav-head-list .header-list {
+.header-list {
   color: var(--title-text-color);
   transition-property: color;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
 }
+.header-list:hover, .header-list:focus {
+  color: #2196F3;
+}
 
-.nav-head-list .header-list:hover,
-.nav-head-list .header-list:focus {
+.nav-head-list {
+  color: var(--title-text-color);
+  transition-property: color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+.nav-head-list:hover, .nav-head-list:focus {
   color: #2196F3;
 }
 
@@ -220,9 +228,7 @@ html {
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
 }
-
-.contact-link:hover,
-.contact-link:focus {
+.contact-link:hover, .contact-link:focus {
   color: var(--accent-color);
 }
 
@@ -539,18 +545,16 @@ html {
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
 }
+.clients-link:hover, .clients-link:focus {
+  border-color: var(--accent-color);
+  outline: 0;
+}
 
 .clients-icon {
   fill: var(--fill-icon-color);
   transition-property: fill;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
-}
-
-.clients-link:hover,
-.clients-link:focus {
-  border-color: var(--accent-color);
-  outline: 0;
 }
 
 .cliens-icon {
@@ -943,9 +947,7 @@ html {
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
 }
-
-.modal-send-button:hover,
-.modal-send-button:focus {
+.modal-send-button:hover, .modal-send-button:focus {
   cursor: pointer;
   background-color: var(--hover-btn-color);
   outline: 0;
@@ -971,7 +973,6 @@ html {
   transition-timing-function: var(--transition-timing-function);
   cursor: pointer;
 }
-
 .main-button:hover {
   background-color: var(--hover-btn-color);
 }
@@ -1023,6 +1024,9 @@ html {
   text-decoration: none;
   font-style: normal;
 }
+.address:hover, .address:focus {
+  color: var(--accent-color);
+}
 
 .address-item {
   display: block;
@@ -1038,11 +1042,7 @@ html {
   color: var(--footer-mail-tel-color);
   font-style: normal;
 }
-
-.address:hover,
-.address:focus,
-.footer-link :hover,
-.footer-link :focus {
+.footer-link:hover, .footer-link:focus {
   color: var(--accent-color);
 }
 

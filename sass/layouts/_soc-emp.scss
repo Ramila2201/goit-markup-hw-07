@@ -22,20 +22,19 @@
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  transition: background-color var(--transition-duration) var(--transition-timing-function)
-}
-
-.employees-soc-link:hover,
-.employees-soc-link:focus {
-  background: var(--accent-color);
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
+    
+  &:hover, & :focus {
+    background: var(--accent-color);
+    }
 }
 
 .employees-soc-link .work-con-icon {
-  transition: fill var(--transition-duration) var(--transition-timing-function)
+  transition: fill var(--transition-duration) var(--transition-timing-function);
 }
 
 .employees-soc-link:hover .work-con-icon,
 .employees-soc-link:focus .work-con-icon {
   fill: var(--secondary-accent-color);
-  transition: fill var(--transition-duration) var(--transition-timing-function)
+  transition: fill var(--transition-duration) var(--transition-timing-function);
 }

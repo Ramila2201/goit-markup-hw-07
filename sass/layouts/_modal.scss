@@ -12,6 +12,12 @@
   position: fixed;
   top: 0;
   transition: visibility 300ms linear, opacity 300ms linear;
+
+  &.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
 }
 
 /* Стан коли модалка відкрита */
@@ -27,11 +33,10 @@
   transform: translate(-50%, -50%) scale(1);
   transition: transform var(--transition-duration) var(--transition-timing-function);
   padding: 40px;
-}
-
-/* Стан коли модалка закрита */
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0);
+  /* Стан коли модалка закрита */
+    .backdrop.is-hidden & {
+      transform: translate(-50%, -50%) scale(0);
+    }
 }
 
 .modal-name {
@@ -75,17 +80,10 @@
   transition-property: fill;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
-}
 
-.modal-close:hover {
-  fill: var(--hover-btn-color);
-
-}
-
-.backdrop.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  &:hover {
+      fill: var(--hover-btn-color);
+  }
 }
 
 .modal-input {
@@ -100,24 +98,18 @@
   transition-property: border-color;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
-}
 
-.modal-input:focus {
-  border-color: var(--accent-color);
-  outline: none;
-}
-
-.inpul-label {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
-  color: var(--primary-text-color);
+  &:focus {
+      border-color: var(--accent-color);
+      outline: none;
+    }
 }
 
 .inpul-label {
   display: block;
   margin-bottom: 4px;
+  @include font (12px, 1.17, 400, 0.01em);
+  color: var(--primary-text-color);
 }
 
 .modal-user-comment {
@@ -127,19 +119,12 @@
   border-radius: 4px;
   padding: 12px 16px;
   resize: none;
-}
 
-.modal-user-comment::placeholder {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
-}
-
-.modal-input:focus+.modal-input-icon {
-  fill: var(--accent-color);
+  &::placeholder {
+      font-family: 'Roboto', sans-serif;
+      @include font (12px, 400, 1.17, 0.01em);
+      color: rgba(117, 117, 117, 0.5);
+    }
 }
 
 .modal-input-icon {
@@ -147,20 +132,20 @@
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
+  .modal-input:focus+ & {
+      fill: var(--accent-color);
+    }
 }
 
 .check-text {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
+  @include font (14px, 400, 1.71, null);
   color: var(--primary-text-color);
-  display: flex;
-  align-items: center;
+  @extend %align-list;
   justify-content: center;
 }
 
-.check-text span::before {
-  content: '';
+
+.check-text span {
   width: 16px;
   height: 15px;
   border: 2px solid var(--title-text-color);
@@ -174,26 +159,23 @@
   transition-property: background-color, fill, border-color;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
-}
 
-.input-check:checked+.check-text span::before {
-  background: var(--accent-color) url('../images/checked-icon.svg') no-repeat center;
-  border-color: var(--accent-color);
-}
+  .input-check:checked+ & {
+      background: var(--accent-color) url('../images/checked-icon.svg') no-repeat center;
+      border-color: var(--accent-color);
+    }
+        .input-check:focus+ & {
+          border-color: var(--accent-color);
+    }
+  }
 
-.input-check:focus+.check-text span {
-  border-color: var(--accent-color);
-}
-
-.contract-conditions {
+  .contract-conditions {
   color: var(--accent-color);
   margin-left: 5px;
-
-}
-
-.contract-conditions::after {
-  content: "";
-  border-bottom: 1px solid var(--accent-color);
+  &::after {
+    content: "";
+    border-bottom: 1px solid var(--accent-color);
+    }
 }
 
 .modal-send-button {
@@ -218,13 +200,11 @@
   transition-property: background-color;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
-}
-
-.modal-send-button:hover,
-.modal-send-button:focus {
-  cursor: pointer;
-  background-color: var(--hover-btn-color);
-  outline: 0;
+  &:hover, &:focus {
+      cursor: pointer;
+      background-color: var(--hover-btn-color);
+      outline: 0;
+    }
 }
 
 /*утиліти  */
@@ -246,8 +226,7 @@
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
   cursor: pointer;
-}
-
-.main-button:hover {
-  background-color: var(--hover-btn-color);
+  &:hover {
+      background-color: var(--hover-btn-color);
+    }
 }
