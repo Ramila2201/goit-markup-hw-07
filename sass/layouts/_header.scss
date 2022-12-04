@@ -1,0 +1,142 @@
+/* Хедер шапка сайту */
+
+.page-header {
+  /* display: flex;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    outline: 2px solid #F5F5F5; */
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border-header-color);
+}
+
+.container-head {
+  display: flex;
+  align-items: center;
+}
+
+.nav-head {
+  display: flex;
+  align-items: center;
+}
+
+/* logo (спільне)*/
+.header-logo {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  color: #000000;
+  text-decoration: none;
+  margin-right: 93px;
+}
+
+.header-logo:focus {
+  color: var(--accent-color);
+}
+
+.web {
+  color: #2196F3;
+  text-decoration: none ;
+}
+
+/* Навігація сайту (спільна) */
+.nav-head-list {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  display: flex;
+  gap: 50px;
+}
+
+.header-list {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: #212121;
+  text-decoration: none;
+  display: block;
+  /* color: var(--header-logo-text-color);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.14;
+    letter-spacing: 0.02em; */
+}
+
+.nav-head-list-item {
+  position: relative;
+}
+
+.header-list.current:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -33px;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+}
+
+.nav-head-list .header-list {
+  color: var(--title-text-color);
+
+  transition-property: color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.nav-head-list .header-list:hover,
+.nav-head-list .header-list:focus {
+  color: #2196F3;
+}
+
+.current {
+  color: #2196F3;
+}
+
+/*Контактні дані (спільні)*/
+.nav-contact {
+  display: flex;
+  gap: 50px;
+  margin-left: auto;
+}
+
+.contact-link {
+  /* font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: #757575;
+    text-decoration: none;
+    font-style: normal;
+    padding-top: 32px;
+    padding-bottom: 32px; */
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--primary-text-color);
+  vertical-align: middle;
+
+  transition-property: color;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.contact-link:hover,
+.contact-link:focus {
+  color: var(--accent-color);
+}
+
+/* іконки до мейл та тел (спільний) 4 дз*/
+.contact-icon {
+  margin-right: 10px;
+  fill: currentColor;
+  vertical-align: middle;
+}
